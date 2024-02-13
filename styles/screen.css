@@ -1,51 +1,123 @@
 main {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    grid-template-rows: auto auto; 
-    gap: 50px 40px; 
-    padding: 40px; /
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 50px 40px;
+    padding: 10px;
+}
+
+body {
+    margin: 10px;
+    padding: 15px;
+    height: 100%;
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    color: white;
   }
   
-  .sun {
-    grid-column: 1 / 3; /* Sun spans all 4 columns */
+  header {
+    position: relative;
+    text-align: center;
+    padding: 50px;
+  }
+  
+  h1 {
+    font-family: 'Orbitron', sans-serif; 
+    font-size: 4em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #00dade62;
+    text-shadow: 0 0 10px #00dbde, 0 0 20px #00dbde, 0 0 30px #00dbde;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px #00dbde, 0 0 20px #00dbde, 0 0 30px #00dbde;
+    }
+    to {
+      text-shadow: 0 0 20px #00dbde, 0 0 30px #00dbde, 0 0 40px #00dbde;
+    }
+  }
+  
+.sun {
+    grid-column: 1 / 3; 
     grid-row-start: 1; 
     grid-row-end: 3;
-  }
-  
-  /* Style for planet cards (articles) */
-  article {
-    border: 2px solid #ccc; /* Border for the card */
-    padding: 20px; /* Padding inside the card */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-    display: flex; /* Use flexbox for internal alignment */
-    flex-direction: row; /* Align children in a row */
-    align-items: center; /* Center items vertically */
-    gap: 20px; /* Space between avatar and text */
-  }
-  
-  /* Planet avatars */
-  .planet-avatar {
-    width: 50px; /* Size of the avatar */
-    height: 50px; /* Size of the avatar */
-    border-radius: 50%; /* Make it round */
-    /* Rest of your avatar styling */
+}
+
+article {
+    border: 2px solid #ccc; 
+    padding: 20px; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    display: flex; 
+    flex-direction: row; 
+    align-items: center; 
+    gap: 30px; 
   }
   
 
-.sun .planet-avatar { background: linear-gradient(to bottom, #fff700, #ffe91e); }
-.mercury .planet-avatar { background: linear-gradient(to bottom, #969696, #525252); }
-.venus .planet-avatar { background: linear-gradient(to bottom, #bf9730, #a67b5b); }
-.earth .planet-avatar { background: linear-gradient(to bottom, #6da2d9, #076324); }
-.mars .planet-avatar { background: linear-gradient(to bottom, #cc3333, #993333); }
-.jupiter .planet-avatar { background: linear-gradient(to bottom, #c79b71, #d8a373); }
-.saturn .planet-avatar { background: linear-gradient(to bottom, #ead9a6, #d1b17a); }
-.uranus .planet-avatar { background: linear-gradient(to bottom, #72cbdb, #5eabad); }
-.neptune .planet-avatar { background: linear-gradient(to bottom, #4973ab, #2d5182); }
+.planet-avatar {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+}
   
-  /* Hover effect */
-  .sun:hover, article:hover {
+.sun .planet-avatar { 
+    background: linear-gradient(to bottom, #fff700, #e9c26f);
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%; 
+ }
+  
+.mercury .planet-avatar { 
+    background: linear-gradient(to bottom, #969696, #525252);
+    width: 45px; 
+    height: 45px; 
+    border-radius: 50%; 
+ }
+
+.venus .planet-avatar { 
+    background: linear-gradient(to bottom, #bf9730, #a67b5b);
+    width: 55px; 
+    height: 55px; 
+    border-radius: 50%; 
+ }
+
+.earth .planet-avatar { 
+    background: linear-gradient(to bottom, #6da2d9, #076324);
+    width: 65px; 
+    height: 65px; 
+    border-radius: 50%; 
+}
+  .mars .planet-avatar { background: linear-gradient(to bottom, #cc3333, #993333); }
+
+.jupiter .planet-avatar { 
+    background: linear-gradient(to bottom, #c79b71, #d8a373);
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+}
+  .saturn .planet-avatar { 
+    background: linear-gradient(to bottom, #ead9a6, #d1b17a);
+    width: 90px; 
+    height: 90px; 
+    border-radius: 50%; 
+}
+
+.uranus .planet-avatar { 
+    background: linear-gradient(to bottom, #72cbdb, #5eabad);
+    width: 80px; 
+    height: 80px; 
+    border-radius: 50%; 
+}
+
+.neptune .planet-avatar { 
+    background: linear-gradient(to bottom, #4973ab, #2d5182);
+    width: 70px; 
+    height: 70px; 
+    border-radius: 50%;  
+}
+  
+.sun:hover, article:hover {
     transform: scale(1.05);
-  }
+}
   
-  
- 
